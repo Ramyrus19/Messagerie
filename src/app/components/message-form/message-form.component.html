@@ -8,7 +8,7 @@
     <textarea class="form-control" name="message" id="message" rows="3" ngModel></textarea>
   </div>
   <button type="button" class="btn btn-success mr-1" (click)="onSubmit(new_message.value)">Enregistrer</button>
-  <button type="button" class="btn btn-warning">Annuler</button>
+  <button type="button" class="btn btn-warning" (click)="new_message.reset();">Annuler</button>
 </form>
 
 

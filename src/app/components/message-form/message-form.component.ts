@@ -18,4 +18,5 @@ export class MessageFormComponent implements OnInit {
   onSubmit(data): void {
     this.newmessage.ajouterUnMessage(data);
   }
+
 }
