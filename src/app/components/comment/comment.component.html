@@ -1,6 +1,8 @@
-<p *ngIf="!commentList.length">Aucun commentaire !</p>
-<div *ngIf="commentList.length">
-  <div class="form-group" *ngFor="let comment of commentList">
+<div class="text-right">
+  <span class="badge badge-primary">{{comments.length}}  Messages</span>
+</div>
+<div *ngIf="comments.length">
+  <div class="form-group" *ngFor="let comment of comments">
 <!--    {{comment|json}}-->
     <label for="comment"><a href="#">{{comment.author}}</a> a écrit le  {{comment.dateTime|date: "dd/MM/yyyy" }} à {{comment.dateTime|date: "HH:mm"}} :</label>
     <p id="comment">{{comment.message}}</p>

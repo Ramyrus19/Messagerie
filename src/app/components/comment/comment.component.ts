@@ -8,9 +8,9 @@ import {ManagerCommentairesService} from '../../services/manager-commentaires.se
   styleUrls: ['./comment.component.css']
 })
 export class CommentComponent implements OnInit {
-  commentList: Commentaire[];
+  comments: Commentaire[];
   constructor(private newmessage: ManagerCommentairesService) {
-    this.commentList = newmessage.getMessages();
+    this.comments = newmessage.getMessages();
   }
 
   ngOnInit(): void {
