@@ -1,10 +1,16 @@
-<p *ngIf="!userList.length">Aucun utilisateur !</p>
-<ul class="nav flex-column" *ngIf="userList.length">
-  <li class="nav-item" *ngFor="let user of userList">
-    <a class="nav-link" href="#">{{ user.nom }} {{user.prenom}}</a>
-<!--    <p>{{user|json}}</p>-->
-  </li>
-</ul>
+
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title">Personnes actives :</h3>
+    <p *ngIf="!userList.length">Aucun utilisateur !</p>
+    <ul class="nav flex-column" *ngIf="userList.length">
+      <li class="nav-item" *ngFor="let user of userList">
+        <a class="nav-link" routerLink="user/{{user.prenom}}">{{user.prenom}}</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 
 

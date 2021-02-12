@@ -1,10 +1,15 @@
-<div class="text-right">
-  <span class="badge badge-primary">{{comments.length}}  Messages</span>
-</div>
-<div *ngIf="comments.length">
-  <div class="form-group" *ngFor="let comment of comments">
-<!--    {{comment|json}}-->
-    <label for="comment"><a href="#">{{comment.author}}</a> a écrit le  {{comment.dateTime|date: "dd/MM/yyyy" }} à {{comment.dateTime|date: "HH:mm"}} :</label>
-    <p id="comment">{{comment.message}}</p>
+
+<div class="card">
+  <div class="card-body">
+    <div class="text-right">
+      <span class="badge badge-primary">{{comments.length}}  Messages</span>
+    </div>
+    <div *ngIf="comments.length">
+      <div class="form-group" *ngFor="let comment of comments">
+        <label for="comment"><a routerLink="user/{{comment.author}}">{{comment.author}}</a> a écrit le  {{comment.dateTime|date: "dd/MM/yyyy" }} à {{comment.dateTime|date: "HH:mm"}} :</label>
+        <p id="comment">{{comment.message}}</p>
+      </div>
+    </div>
   </div>
 </div>
+

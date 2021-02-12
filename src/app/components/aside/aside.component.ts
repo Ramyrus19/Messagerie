@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {User} from '../../modeles/user';
+import {ManageUsersService} from '../../services/manage-users.service';
 
 @Component({
   selector: 'app-aside',
@@ -9,10 +10,8 @@ import {User} from '../../modeles/user';
 export class AsideComponent implements OnInit {
   userList: User[];
 
-  constructor() {
-    this.userList = [];
-    this.userList.push(new User('Paul'));
-    this.userList.push(new User('Jean'));
+  constructor(private usermanager: ManageUsersService) {
+    this.userList = usermanager.getUsers();
   }
 
   ngOnInit(): void {
