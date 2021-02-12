@@ -1,0 +1,10 @@
+<p *ngIf="!userList.length">Aucun utilisateur !</p>
+<ul class="nav flex-column" *ngIf="userList.length">
+  <li class="nav-item" *ngFor="let user of userList">
+    <a class="nav-link" href="#">{{ user.nom }} {{user.prenom}}</a>
+<!--    <p>{{user|json}}</p>-->
+  </li>
+</ul>
+
+
+
